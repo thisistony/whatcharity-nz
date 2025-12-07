@@ -1,0 +1,354 @@
+🔍 COMPREHENSIVE 200-CHARITY AUDIT
+Testing 100 random charities...
+This will take approximately 10-15 minutes...
+
+[1/100] ✅ Christchurch Music Theatre Education Trust         (CC52518)
+[2/100] ✅ IARC Charitable Trust                              (CC38996)
+[3/100] ❌ Home & Family Charitable Trust                     (CC73686)
+     ⚠️  Total Income: 0.27% diff (Local: $1,850,000 vs API: $1,854,955)
+     ⚠️  Total Assets: 0.24% diff (Local: $1,910,000 vs API: $1,905,426)
+[4/100] ❌ Western Bay Heritage Trust Board                   (CC66866)
+     ⚠️  Net Surplus/Deficit: 0.34% diff (Local: -$8,200 vs API: -$8,228)
+[5/100] ❌ The Phil Lamason Heritage Centre Trust Incorporate (CC65803)
+     ⚠️  Total Expenditure: 0.66% diff (Local: $4,900 vs API: $4,868)
+[6/100] ❌ Papa O Te Aroha Marae Charitable Trust             (CC74794)
+     ⚠️  Total Income: 0.41% diff (Local: $6,100 vs API: $6,125)
+[7/100] ✅ The Community Of The Sacred Name Society Or Trust  (CC39309)
+[8/100] ✅ Titirangi Baptist Church                           (CC40234)
+[9/100] ✅ New Zealand Methodist Women's Fellowship           (CC65026)
+[10/100] ✅ Gracebooks Community Trust                         (CC61184)
+[11/100] ✅ Manaaki Rangatahi                                  (CC74251)
+[12/100] ❌ Aotearoa Refugee Support Trust                     (CC51240)
+     ⚠️  Total Expenditure: 0.28% diff (Local: $1,020,000 vs API: $1,022,913)
+[13/100] ❌ The Frank & Margaret Whiteley Charitable Trust     (CC36083)
+     ⚠️  Net Surplus/Deficit: 0.26% diff (Local: $7,700 vs API: $7,720)
+[14/100] ❌ Lions Club of Kapakapanui Charitable Trust         (CC43657)
+     ⚠️  Net Surplus/Deficit: 0.82% diff (Local: $2,100 vs API: $2,083)
+     ⚠️  Total Assets: 0.89% diff (Local: $4,100 vs API: $4,064)
+[15/100] ✅ Korou Digital (Charitable) Trust                   (CC72548)
+[16/100] ✅ Ted Manson Charitable Trust                        (CC34629)
+[17/100] ✅ National Science Technology Roadshow Trust Board   (CC42402)
+[18/100] ✅ Bay Reach Community Trust                          (CC38813)
+[19/100] ❌ Saint Davids Memorial Church Fund                  (CC60534)
+     ⚠️  Total Income: 2.76% diff (Local: $1,200 vs API: $1,234)
+     ⚠️  Total Expenditure: 0.33% diff (Local: $1,200 vs API: $1,204)
+[20/100] ✅ New Zealand Cadet And GEMS National Board          (CC42935)
+[21/100] ✅ Invercargill Elim Community Church Trust           (CC33592)
+[22/100] ❌ Belfast Community Network Inc                      (CC52830)
+     ⚠️  Net Surplus/Deficit: 0.21% diff (Local: -$21,800 vs API: -$21,755)
+[23/100] ✅ Temple Basin Ski Club Incorporated                 (CC50164)
+[24/100] ✅ Ageplus Charitable Trust                           (CC38478)
+[25/100] ✅ Atawhai Community Church                           (CC53937)
+[26/100] ❌ Feilding Playcentre                                (CC61139)
+     ⚠️  Net Surplus/Deficit: 2.85% diff (Local: $1,300 vs API: $1,264)
+[27/100] ✅ John McGlashan College Charitable Trust            (CC55776)
+[28/100] ❌ Tauranga Budget Advisory Service Incorporated      (CC55630)
+     ⚠️  Total Assets: 0.24% diff (Local: $1,290,000 vs API: $1,286,891)
+[29/100] ✅ New Zealand Epoch Times Limited                    (CC61551)
+[30/100] ✅ Thorrington Village Limited                        (CC66210)
+[31/100] ✅ Maxim Institute                                    (CC39618)
+[32/100] ❌ Tryphina House Whangarei Women's Refuge Incorporat (CC51972)
+     ⚠️  Net Surplus/Deficit: 0.67% diff (Local: $3,300 vs API: $3,278)
+[33/100] ❌ Ruahine Playhouse                                  (CC42815)
+     ⚠️  Total Income: 1.92% diff (Local: $2,200 vs API: $2,243)
+     ⚠️  Total Assets: 0.62% diff (Local: $3,100 vs API: $3,081)
+[34/100] ❌ The Psalm 2:8 Trust                                (CC63814)
+     ⚠️  Net Surplus/Deficit: 0.34% diff (Local: -$9,100 vs API: -$9,131)
+[35/100] ✅ Community House (Whanganui) Association Incorporat (CC42968)
+[36/100] ✅ Dunstan Golf Club Incorporated                     (CC34074)
+[37/100] ❌ Papakura Theatre Company Incorporated              (CC61345)
+     ⚠️  Net Surplus/Deficit: 0.24% diff (Local: -$20,700 vs API: -$20,749)
+[38/100] ✅ Royal Academy of Dance                             (CC54051)
+[39/100] ✅ Education Sponsorship Trust                        (CC54780)
+[40/100] ✅ Live For More Charitable Trust                     (CC66188)
+[41/100] ✅ Seaside Charitable Trust                           (CC58671)
+[42/100] ❌ The Talking Matters Charitable Trust               (CC73747)
+     ⚠️  Total Income: 0.38% diff (Local: $1,050,000 vs API: $1,046,033)
+[43/100] ❌ South Marlborough Landscape Restoration Trust      (CC69272)
+     ⚠️  Net Surplus/Deficit: 0.72% diff (Local: $6,300 vs API: $6,255)
+[44/100] ✅ The Congregational Christian Church of Samoa (Bloc (CC44078)
+[45/100] ✅ St Laurence's Social Service Trust Board           (CC44517)
+[46/100] ✅ Living Waters Wesleyan Church                      (CC48315)
+[47/100] ❌ BACS Trust Board                                   (CC66961)
+     ⚠️  Total Expenditure: 0.41% diff (Local: $11,400 vs API: $11,353)
+     ⚠️  Net Surplus/Deficit: 0.29% diff (Local: $12,900 vs API: $12,863)
+[48/100] ✅ Fountainblue Limited                               (CC69796)
+[49/100] ✅ Waikato City Assembly of God Trust Board           (CC54887)
+[50/100] ✅ Mount Roskill Islamic Trust                        (CC38115)
+[51/100] ✅ Claude McCarthy Trust                              (CC41128)
+[52/100] ✅ Ark Resources Limited                              (CC67894)
+[53/100] ❌ Palmerston North Jaycee Trust                      (CC44500)
+     ⚠️  Total Income: 0.40% diff (Local: $6,200 vs API: $6,225)
+     ⚠️  Total Expenditure: 0.40% diff (Local: $12,000 vs API: $11,952)
+     ⚠️  Net Surplus/Deficit: 0.47% diff (Local: -$5,700 vs API: -$5,727)
+[54/100] ✅ Powerhouse Christian Trust                         (CC42054)
+[55/100] ❌ Kaiapoi Co-Operating Parish Methodist-Presbyterian (CC57514)
+     ⚠️  Total Assets: 0.22% diff (Local: $1,650,000 vs API: $1,653,614)
+[56/100] ✅ Trinity Ministries Incorporated                    (CC52675)
+[57/100] ✅ Te Maori Manaaki Taonga Trust                      (CC46798)
+[58/100] ❌ Chambers Memorial Trust                            (CC53008)
+     ⚠️  Net Surplus/Deficit: 0.69% diff (Local: -$4,200 vs API: -$4,229)
+[59/100] ✅ Bread of Life Christian Church - Spring of Grace T (CC62412)
+[60/100] ✅ Robert McIsaac Charitable Trust                    (CC39000)
+[61/100] ✅ TUCKER BEACH WILDLIFE TRUST                        (CC75642)
+[62/100] ❌ Rail Heritage Trust of New Zealand                 (CC57770)
+     ⚠️  Net Surplus/Deficit: 0.23% diff (Local: $13,800 vs API: $13,832)
+[63/100] ✅ Marian School PTFA                                 (CC38392)
+[64/100] ✅ Rangitikei Environment Group Incorporated          (CC39374)
+[65/100] ✅ RBC Ministries New Zealand Trust                   (CC41195)
+[66/100] ❌ He Whenua Taurikura - National Centre of Research  (CC74544)
+     ⚠️  Total Assets: 0.28% diff (Local: $1,580,000 vs API: $1,584,363)
+[67/100] ✅ Rotorua Rowing Club Incorporated                   (CC65877)
+[68/100] ✅ Te Awhina Tangata                                  (CC52989)
+[69/100] ✅ Ngati Rangatahi Whanaunga (Association)            (CC43846)
+[70/100] ❌ Te Hui Amorangi Ki Te Tairawhiti Trust Board       (CC45497)
+     ⚠️  Net Surplus/Deficit: 0.48% diff (Local: -$3,700 vs API: -$3,718)
+[71/100] ❌ Otatara Community Centre Trust                     (CC64785)
+     ⚠️  Net Surplus/Deficit: 1.51% diff (Local: -$2,800 vs API: -$2,843)
+[72/100] ✅ The New Zealand Resident Doctors Association Educa (CC47518)
+[73/100] ✅ Whanganui Enterprises Trust                        (CC57233)
+[74/100] ❌ Vogelmorn Community Group Charitable Trust         (CC69425)
+     ⚠️  Net Surplus/Deficit: 0.70% diff (Local: -$6,800 vs API: -$6,753)
+[75/100] ✅ Birthright Wellington Incorporated                 (CC59464)
+[76/100] ✅ Directors Cancer Research Trust                    (CC57819)
+[77/100] ✅ Whaiora Marae Maori Catholic Society Incorporated  (CC69557)
+[78/100] ✅ South Canterbury Free Kindergarten Association Inc (CC39060)
+[79/100] ✅ St James Union Parish Church Greerton              (CC56729)
+[80/100] ✅ Stratford  Baptist Church                          (CC39858)
+[81/100] ✅ North Harbour Touch Association Incorporated       (CC63075)
+[82/100] ❌ METHODIST CHURCH SAMOA (NEW ZEALAND) OTAHUHU PARIS (CC67149)
+     ⚠️  Total Assets: 0.22% diff (Local: $2,130,000 vs API: $2,125,371)
+[83/100] ✅ Grace Christian Trust Napier                       (CC68043)
+[84/100] ✅ Te Ora Hou Ōtautahi Incorporated                   (CC39114)
+[85/100] ✅ Moteo Marae                                        (CC50146)
+[86/100] ✅ Howick Presbyterian Church                         (CC65810)
+[87/100] ✅ Graeme Dingle Foundation Southern                  (CC59736)
+[88/100] ❌ South Island Kokako Charitable Trust               (CC37574)
+     ⚠️  Total Income: 0.49% diff (Local: $10,300 vs API: $10,250)
+     ⚠️  Net Surplus/Deficit: 1.21% diff (Local: -$3,500 vs API: -$3,543)
+[89/100] ❌ Evangelise China Fellowship New Zealand Charitable (CC54809)
+     ⚠️  Net Surplus/Deficit: 0.65% diff (Local: $4,100 vs API: $4,127)
+[90/100] ✅ Servants Health Centre Trust                       (CC63662)
+[91/100] ✅ Whangarei Native Bird Recovery Centre Incorporated (CC52743)
+[92/100] ❌ Volunteer Service Abroad Te Tuao Tawahi Incorporat (CC42253)
+     ⚠️  Net Surplus/Deficit: 0.28% diff (Local: -$2,500 vs API: -$2,493)
+[93/100] ✅ Hot Water Beach Lifeguard Service Incorporated     (CC39530)
+[94/100] ✅ The Bay Of Whales Childrens Trust Incorporated     (CC52834)
+[95/100] ✅ Whangamata Baptist Church                          (CC41938)
+[96/100] ✅ The South Island (Te Waipounamu) Branch of the Mus (CC53064)
+[97/100] ✅ Otautahi Women's Refuge Incorporated               (CC32592)
+[98/100] ✅ Kauri Coast Community Pool Trust                   (CC55444)
+[99/100] ✅ Gisborne Volunteer Centre                          (CC55057)
+[100/100] ✅ St Paul's Co-operating Church Papamoa              (CC56735)
+
+
+⏱️  Audit completed in 6.4 minutes
+
+
+████████████████████████████████████████████████████████████████████████████████████████████████████
+200 CHARITY AUDIT - COMPREHENSIVE REPORT
+████████████████████████████████████████████████████████████████████████████████████████████████████
+
+📊 OVERALL STATISTICS:
+   Total Charities Tested: 100
+   ✅ Perfect Match:      70 (70.0%)
+   ❌ Discrepancies:      30 (30.0%)
+   ⚠️  Errors:             0 (0.0%)
+
+💰 FINANCIAL SCOPE:
+   Total Income Audited: $72,918,157
+
+📈 ACCURACY RATE: 70.00%
+
+
+❌ FAILED AUDITS (30):
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+1. Home & Family Charitable Trust (CC73686)
+   ⚠️  Total Income: 0.27% difference
+       Localhost: $1,850,000
+       Official:  $1,854,955
+   ⚠️  Total Assets: 0.24% difference
+       Localhost: $1,910,000
+       Official:  $1,905,426
+
+2. Western Bay Heritage Trust Board (CC66866)
+   ⚠️  Net Surplus/Deficit: 0.34% difference
+       Localhost: -$8,200
+       Official:  -$8,228
+
+3. The Phil Lamason Heritage Centre Trust Incorporated (CC65803)
+   ⚠️  Total Expenditure: 0.66% difference
+       Localhost: $4,900
+       Official:  $4,868
+
+4. Papa O Te Aroha Marae Charitable Trust (CC74794)
+   ⚠️  Total Income: 0.41% difference
+       Localhost: $6,100
+       Official:  $6,125
+
+5. Aotearoa Refugee Support Trust (CC51240)
+   ⚠️  Total Expenditure: 0.28% difference
+       Localhost: $1,020,000
+       Official:  $1,022,913
+
+6. The Frank & Margaret Whiteley Charitable Trust (CC36083)
+   ⚠️  Net Surplus/Deficit: 0.26% difference
+       Localhost: $7,700
+       Official:  $7,720
+
+7. Lions Club of Kapakapanui Charitable Trust (CC43657)
+   ⚠️  Net Surplus/Deficit: 0.82% difference
+       Localhost: $2,100
+       Official:  $2,083
+   ⚠️  Total Assets: 0.89% difference
+       Localhost: $4,100
+       Official:  $4,064
+
+8. Saint Davids Memorial Church Fund (CC60534)
+   ⚠️  Total Income: 2.76% difference
+       Localhost: $1,200
+       Official:  $1,234
+   ⚠️  Total Expenditure: 0.33% difference
+       Localhost: $1,200
+       Official:  $1,204
+
+9. Belfast Community Network Inc (CC52830)
+   ⚠️  Net Surplus/Deficit: 0.21% difference
+       Localhost: -$21,800
+       Official:  -$21,755
+
+10. Feilding Playcentre (CC61139)
+   ⚠️  Net Surplus/Deficit: 2.85% difference
+       Localhost: $1,300
+       Official:  $1,264
+
+11. Tauranga Budget Advisory Service Incorporated (CC55630)
+   ⚠️  Total Assets: 0.24% difference
+       Localhost: $1,290,000
+       Official:  $1,286,891
+
+12. Tryphina House Whangarei Women's Refuge Incorporated (CC51972)
+   ⚠️  Net Surplus/Deficit: 0.67% difference
+       Localhost: $3,300
+       Official:  $3,278
+
+13. Ruahine Playhouse (CC42815)
+   ⚠️  Total Income: 1.92% difference
+       Localhost: $2,200
+       Official:  $2,243
+   ⚠️  Total Assets: 0.62% difference
+       Localhost: $3,100
+       Official:  $3,081
+
+14. The Psalm 2:8 Trust (CC63814)
+   ⚠️  Net Surplus/Deficit: 0.34% difference
+       Localhost: -$9,100
+       Official:  -$9,131
+
+15. Papakura Theatre Company Incorporated (CC61345)
+   ⚠️  Net Surplus/Deficit: 0.24% difference
+       Localhost: -$20,700
+       Official:  -$20,749
+
+16. The Talking Matters Charitable Trust (CC73747)
+   ⚠️  Total Income: 0.38% difference
+       Localhost: $1,050,000
+       Official:  $1,046,033
+
+17. South Marlborough Landscape Restoration Trust (CC69272)
+   ⚠️  Net Surplus/Deficit: 0.72% difference
+       Localhost: $6,300
+       Official:  $6,255
+
+18. BACS Trust Board (CC66961)
+   ⚠️  Total Expenditure: 0.41% difference
+       Localhost: $11,400
+       Official:  $11,353
+   ⚠️  Net Surplus/Deficit: 0.29% difference
+       Localhost: $12,900
+       Official:  $12,863
+
+19. Palmerston North Jaycee Trust (CC44500)
+   ⚠️  Total Income: 0.40% difference
+       Localhost: $6,200
+       Official:  $6,225
+   ⚠️  Total Expenditure: 0.40% difference
+       Localhost: $12,000
+       Official:  $11,952
+   ⚠️  Net Surplus/Deficit: 0.47% difference
+       Localhost: -$5,700
+       Official:  -$5,727
+
+20. Kaiapoi Co-Operating Parish Methodist-Presbyterian (CC57514)
+   ⚠️  Total Assets: 0.22% difference
+       Localhost: $1,650,000
+       Official:  $1,653,614
+
+21. Chambers Memorial Trust (CC53008)
+   ⚠️  Net Surplus/Deficit: 0.69% difference
+       Localhost: -$4,200
+       Official:  -$4,229
+
+22. Rail Heritage Trust of New Zealand (CC57770)
+   ⚠️  Net Surplus/Deficit: 0.23% difference
+       Localhost: $13,800
+       Official:  $13,832
+
+23. He Whenua Taurikura - National Centre of Research Excellence (CC74544)
+   ⚠️  Total Assets: 0.28% difference
+       Localhost: $1,580,000
+       Official:  $1,584,363
+
+24. Te Hui Amorangi Ki Te Tairawhiti Trust Board (CC45497)
+   ⚠️  Net Surplus/Deficit: 0.48% difference
+       Localhost: -$3,700
+       Official:  -$3,718
+
+25. Otatara Community Centre Trust (CC64785)
+   ⚠️  Net Surplus/Deficit: 1.51% difference
+       Localhost: -$2,800
+       Official:  -$2,843
+
+26. Vogelmorn Community Group Charitable Trust (CC69425)
+   ⚠️  Net Surplus/Deficit: 0.70% difference
+       Localhost: -$6,800
+       Official:  -$6,753
+
+27. METHODIST CHURCH SAMOA (NEW ZEALAND) OTAHUHU PARISH (CC67149)
+   ⚠️  Total Assets: 0.22% difference
+       Localhost: $2,130,000
+       Official:  $2,125,371
+
+28. South Island Kokako Charitable Trust (CC37574)
+   ⚠️  Total Income: 0.49% difference
+       Localhost: $10,300
+       Official:  $10,250
+   ⚠️  Net Surplus/Deficit: 1.21% difference
+       Localhost: -$3,500
+       Official:  -$3,543
+
+29. Evangelise China Fellowship New Zealand Charitable Trust (CC54809)
+   ⚠️  Net Surplus/Deficit: 0.65% difference
+       Localhost: $4,100
+       Official:  $4,127
+
+30. Volunteer Service Abroad Te Tuao Tawahi Incorporated (CC42253)
+   ⚠️  Net Surplus/Deficit: 0.28% difference
+       Localhost: -$2,500
+       Official:  -$2,493
+
+
+████████████████████████████████████████████████████████████████████████████████████████████████████
+PRODUCTION READINESS VERDICT
+████████████████████████████████████████████████████████████████████████████████████████████████████
+
+⚠️  STATUS: NEEDS REVIEW
+
+70.00% accuracy across 100 charities.
+Some issues detected that should be investigated.
+
+████████████████████████████████████████████████████████████████████████████████████████████████████
+
+💾 Results saved to audit_200_results.json
+

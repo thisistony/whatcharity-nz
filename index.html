@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P4TLXL86');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>What Charity? | Explore the finances of NZ Charities</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=8">
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4TLXL86"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo"><span class="logo-what">what</span>charity.co.nz</div>
+        </nav>
+
+        <section class="hero">
+            <h1>Explore Financial<br>Transparency of<br><span class="highlight dynamic-text" id="dynamic-text">NZ Charities</span></h1>
+            <p class="hero-subtitle">Discover detailed financial insights and see where donations really go</p>
+        </section>
+
+        <section class="search-section">
+            <div class="search-card">
+                <div class="search-box">
+                    <div class="search-input-wrapper">
+                        <input type="text" id="searchInput" placeholder="Search by charity name or ID (e.g., CC29039)..." />
+                        <button id="clearSearchBtn" class="clear-search-btn hidden" aria-label="Clear search">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <p class="charities-count">Over 29,208 charities searchable.</p>
+                <div id="searchResults" class="search-results hidden"></div>
+            </div>
+            <p class="credit-text">Proudly made by the same team as <a href="https://whatsthesalary.com" target="_blank">whatsthesalary.com</a> and <a href="https://whatstheincometax.com" target="_blank">whatstheincometax.com</a></p>
+
+            <!-- Search Loading Indicator -->
+            <div id="searchLoading" class="search-loading hidden">
+                <div class="search-pacman"></div>
+            </div>
+        </section>
+
+        <div id="charityDetails" class="charity-details hidden">
+            <!-- Loading Overlay -->
+            <div id="loadingOverlay" class="loading-overlay hidden">
+                <div class="loading-content">
+                    <div class="overlay-pacman"></div>
+                    <p class="loading-text">Loading charity data...</p>
+                </div>
+            </div>
+
+            <div id="charityContent" class="charity-content">
+            <div class="charity-header">
+                <div>
+                    <h2 id="charityName"></h2>
+                    <span id="charityStatus" class="status-badge"></span>
+                    <span id="charityTier" class="status-badge active hidden"></span>
+                </div>
+                <div class="header-links">
+                    <a id="viewOfficialLink" href="#" target="_blank" rel="noopener noreferrer" class="view-official-btn hidden">
+                        View on Charities Register
+                    </a>
+                    <div id="shareContainer" class="share-container hidden">
+                        <span id="shareUrl" class="share-url"></span>
+                        <button id="shareBtn" class="share-btn" onclick="copyShareLink()">
+                            Share
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="groupBanner" class="group-banner hidden">
+                <div class="group-banner-icon">👥</div>
+                <div class="group-banner-content">
+                    <div class="group-banner-title">Part of a Charity Group</div>
+                    <div class="group-banner-text">This charity is part of a group structure. <a href="javascript:void(0)" id="viewGroupLink" class="group-link">View all charities in this group →</a></div>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-label">Registration Number</div>
+                    <div id="regNumber" class="info-value"></div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label">Date Registered</div>
+                    <div id="dateRegistered" class="info-value"></div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label">Entity Type</div>
+                    <div id="entityType" class="info-value"></div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label">Main Activity</div>
+                    <div id="mainActivity" class="info-value"></div>
+                </div>
+            </div>
+
+            <div id="charitablePurpose" class="charitable-purpose hidden">
+                <div class="section-title">About This Charity</div>
+                <p id="purposeText" class="purpose-text"></p>
+            </div>
+
+            <div class="contact-section">
+                <div class="section-title">Contact Information</div>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span class="contact-label">Email:</span>
+                        <span id="email" class="contact-value"></span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <span class="contact-label">Phone:</span>
+                        <span id="phone" class="contact-value"></span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🌐</span>
+                        <span class="contact-label">Website:</span>
+                        <span id="website" class="contact-value"></span>
+                    </div>
+                    <div class="contact-item full-width">
+                        <span class="contact-icon">📍</span>
+                        <span class="contact-label">Address:</span>
+                        <span id="address" class="contact-value"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="financialSection" class="financial-section hidden">
+                <h3>Latest Financial Information</h3>
+                <div id="yearEnded" class="year-label"></div>
+
+                <div class="financial-grid">
+                    <div class="financial-card highlight">
+                        <div class="financial-icon">💰</div>
+                        <div class="financial-label">Total Income</div>
+                        <div id="totalIncome" class="financial-amount"></div>
+                    </div>
+                    <div class="financial-card highlight">
+                        <div class="financial-icon">📊</div>
+                        <div class="financial-label">Total Expenditure</div>
+                        <div id="totalExpenditure" class="financial-amount"></div>
+                    </div>
+                    <div class="financial-card">
+                        <div class="financial-icon">📈</div>
+                        <div class="financial-label">Net Surplus/Deficit</div>
+                        <div id="netSurplus" class="financial-amount"></div>
+                    </div>
+                    <div class="financial-card">
+                        <div class="financial-icon">🏦</div>
+                        <div class="financial-label">Total Assets</div>
+                        <div id="totalAssets" class="financial-amount"></div>
+                    </div>
+                </div>
+
+                <div class="section-title">Expenditure Breakdown</div>
+                <div class="expenditure-breakdown">
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Volunteer and employee related costs</div>
+                        <div class="breakdown-bar">
+                            <div id="salariesBar" class="breakdown-fill"></div>
+                        </div>
+                        <div id="salariesAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Fundraising Expenses</div>
+                        <div class="breakdown-bar">
+                            <div id="fundraisingBar" class="breakdown-fill"></div>
+                        </div>
+                        <div id="fundraisingAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Costs related to providing goods and services</div>
+                        <div class="breakdown-bar">
+                            <div id="serviceBar" class="breakdown-fill"></div>
+                        </div>
+                        <div id="serviceAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Grants and Donations made</div>
+                        <div class="breakdown-bar">
+                            <div id="grantsBar" class="breakdown-fill"></div>
+                        </div>
+                        <div id="grantsAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Trading Operations</div>
+                        <div class="breakdown-bar">
+                            <div id="tradingBar" class="breakdown-fill"></div>
+                        </div>
+                        <div id="tradingAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Volunteer Expenses</div>
+                        <div class="breakdown-bar">
+                            <div id="volunteerBar" class="breakdown-fill"></div>
+                        </div>
+                        <div id="volunteerAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Other expenses</div>
+                        <div class="breakdown-bar">
+                            <div id="otherExpBar" class="breakdown-fill"></div>
+                        </div>
+                        <div id="otherExpAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div id="unaccountedItem" class="breakdown-item hidden">
+                        <div class="breakdown-label">Unspecified/Other Categories</div>
+                        <div class="breakdown-bar">
+                            <div id="unaccountedBar" class="breakdown-fill"></div>
+                        </div>
+                        <div id="unaccountedAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item breakdown-total">
+                        <div class="breakdown-label"><strong>Total Expenditure</strong></div>
+                        <div></div>
+                        <div id="expenditureTotalAmount" class="breakdown-amount"><strong></strong></div>
+                    </div>
+                </div>
+
+                <div class="section-title">Income Sources</div>
+                <div class="income-breakdown">
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Donations, koha, bequests, and other general fundraising activities</div>
+                        <div class="breakdown-bar income-bar">
+                            <div id="donationsBar" class="breakdown-fill income-fill"></div>
+                        </div>
+                        <div id="donationsAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">General grants</div>
+                        <div class="breakdown-bar income-bar">
+                            <div id="generalGrantsBar" class="breakdown-fill income-fill"></div>
+                        </div>
+                        <div id="generalGrantsAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Capital grants and donations</div>
+                        <div class="breakdown-bar income-bar">
+                            <div id="capitalGrantsBar" class="breakdown-fill income-fill"></div>
+                        </div>
+                        <div id="capitalGrantsAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Government service delivery grants/contracts</div>
+                        <div class="breakdown-bar income-bar">
+                            <div id="govGrantsBar" class="breakdown-fill income-fill"></div>
+                        </div>
+                        <div id="govGrantsAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Non-Government service delivery grants/contracts</div>
+                        <div class="breakdown-bar income-bar">
+                            <div id="nonGovGrantsBar" class="breakdown-fill income-fill"></div>
+                        </div>
+                        <div id="nonGovGrantsAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Membership fees and subscriptions</div>
+                        <div class="breakdown-bar income-bar">
+                            <div id="membershipFeesBar" class="breakdown-fill income-fill"></div>
+                        </div>
+                        <div id="membershipFeesAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Revenue from commercial activities</div>
+                        <div class="breakdown-bar income-bar">
+                            <div id="commercialRevenueBar" class="breakdown-fill income-fill"></div>
+                        </div>
+                        <div id="commercialRevenueAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Interest, dividends and other investment revenue</div>
+                        <div class="breakdown-bar income-bar">
+                            <div id="investmentBar" class="breakdown-fill income-fill"></div>
+                        </div>
+                        <div id="investmentAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Other revenue</div>
+                        <div class="breakdown-bar income-bar">
+                            <div id="otherIncomeBar" class="breakdown-fill income-fill"></div>
+                        </div>
+                        <div id="otherIncomeAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div id="unaccountedIncomeItem" class="breakdown-item hidden">
+                        <div class="breakdown-label">Unaccounted Income</div>
+                        <div class="breakdown-bar income-bar">
+                            <div id="unaccountedIncomeBar" class="breakdown-fill income-fill"></div>
+                        </div>
+                        <div id="unaccountedIncomeAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item breakdown-total">
+                        <div class="breakdown-label"><strong>Total Income</strong></div>
+                        <div></div>
+                        <div id="incomeTotalAmount" class="breakdown-amount"><strong></strong></div>
+                    </div>
+                </div>
+
+                <div class="section-title">Key Insights</div>
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <div class="insight-icon">🎯</div>
+                        <div class="insight-label">Non-Salary and Wages Expenditure</div>
+                        <div id="programEfficiency" class="insight-value"></div>
+                        <div class="insight-description">Percentage of spending that goes to non-salary and wages costs</div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-icon">👥</div>
+                        <div class="insight-label">Staff Cost Ratio</div>
+                        <div id="staffRatio" class="insight-value"></div>
+                        <div class="insight-description">Salaries & wages as % of total expenditure</div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-icon">🌍</div>
+                        <div class="insight-label">Overseas Spending</div>
+                        <div id="overseasSpending" class="insight-value"></div>
+                        <div class="insight-description">Percentage of funds spent overseas</div>
+                    </div>
+                </div>
+
+                <div class="section-title">Asset Composition</div>
+                <div class="assets-grid">
+                    <div class="asset-item">
+                        <span class="asset-label">Cash & Bank Balances</span>
+                        <span id="cashAssets" class="asset-value"></span>
+                    </div>
+                    <div class="asset-item">
+                        <span class="asset-label">Investments</span>
+                        <span id="investments" class="asset-value"></span>
+                    </div>
+                    <div class="asset-item">
+                        <span class="asset-label">Land & Buildings</span>
+                        <span id="landBuildings" class="asset-value"></span>
+                    </div>
+                    <div class="asset-item">
+                        <span class="asset-label">Other Assets</span>
+                        <span id="otherAssets" class="asset-value"></span>
+                    </div>
+                    <div class="asset-item total">
+                        <span class="asset-label">Total Liabilities</span>
+                        <span id="totalLiabilities" class="asset-value"></span>
+                    </div>
+                    <div class="asset-item total">
+                        <span class="asset-label">Net Equity</span>
+                        <span id="totalEquity" class="asset-value"></span>
+                    </div>
+                </div>
+
+                <div class="section-title">Year-over-Year Financial Trends</div>
+                <div class="yoy-comparison">
+                    <div class="yoy-item">
+                        <div class="yoy-metric">Total Income</div>
+                        <div class="yoy-values">
+                            <div class="yoy-current">
+                                <span class="yoy-label">This Year:</span>
+                                <span id="yoyIncome" class="yoy-amount"></span>
+                            </div>
+                            <div class="yoy-previous">
+                                <span class="yoy-label">Last Year:</span>
+                                <span id="yoyIncomeLast" class="yoy-amount"></span>
+                            </div>
+                            <div id="yoyIncomeChange" class="yoy-change"></div>
+                        </div>
+                    </div>
+                    <div class="yoy-item">
+                        <div class="yoy-metric">Total Expenditure</div>
+                        <div class="yoy-values">
+                            <div class="yoy-current">
+                                <span class="yoy-label">This Year:</span>
+                                <span id="yoyExpenditure" class="yoy-amount"></span>
+                            </div>
+                            <div class="yoy-previous">
+                                <span class="yoy-label">Last Year:</span>
+                                <span id="yoyExpenditureLast" class="yoy-amount"></span>
+                            </div>
+                            <div id="yoyExpenditureChange" class="yoy-change"></div>
+                        </div>
+                    </div>
+                    <div class="yoy-item">
+                        <div class="yoy-metric">Total Assets</div>
+                        <div class="yoy-values">
+                            <div class="yoy-current">
+                                <span class="yoy-label">This Year:</span>
+                                <span id="yoyAssets" class="yoy-amount"></span>
+                            </div>
+                            <div class="yoy-previous">
+                                <span class="yoy-label">Last Year:</span>
+                                <span id="yoyAssetsLast" class="yoy-amount"></span>
+                            </div>
+                            <div id="yoyAssetsChange" class="yoy-change"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-title">People & Operations</div>
+                <div class="operations-grid">
+                    <div class="operations-card">
+                        <div class="operations-icon">👥</div>
+                        <div class="operations-label">Volunteers</div>
+                        <div id="volunteersCount" class="operations-value"></div>
+                        <div id="volunteerHours" class="operations-detail"></div>
+                    </div>
+                    <div class="operations-card">
+                        <div class="operations-icon">💼</div>
+                        <div class="operations-label">Employees</div>
+                        <div id="employeesCount" class="operations-value"></div>
+                        <div id="employeeHours" class="operations-detail"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="noFinancialData" class="no-data hidden">
+                <h3>📊 No Financial Data Available</h3>
+                <p>This charity has not filed individual annual returns with Charities Services.</p>
+                <p><strong>Possible reasons:</strong></p>
+                <ul style="text-align: left; display: inline-block; margin: 1em 0;">
+                    <li>Part of a group structure - files consolidated returns under parent entity</li>
+                    <li>Newly registered charity - first annual return not yet due</li>
+                    <li>Small charity exempt from filing requirements (income under $10,000)</li>
+                    <li>Returns are overdue or not yet submitted</li>
+                </ul>
+                <p>For more information, visit the <a href="https://www.charities.govt.nz" target="_blank" rel="noopener">Charities Services website</a>.</p>
+            </div>
+
+            <div id="historicalReturnsSection" class="historical-returns-section hidden">
+                <div class="section-title">Historical Annual Returns</div>
+                <div class="table-container">
+                    <table id="historicalReturnsTable" class="returns-table">
+                        <thead>
+                            <tr>
+                                <th>Year Ended</th>
+                                <th>Total Income</th>
+                                <th>Total Expenditure</th>
+                                <th>Net Surplus/Deficit</th>
+                                <th>Download</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historicalReturnsBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="officersSection" class="officers-section hidden">
+                <div class="section-title">Officers & Trustees</div>
+                <div id="officersList" class="officers-list"></div>
+            </div>
+
+            <div id="documentsSection" class="documents-section hidden">
+                <div class="section-title">Charity Documents</div>
+                <div id="documentsList" class="documents-list"></div>
+            </div>
+            </div><!-- end charityContent -->
+        </div><!-- end charityDetails -->
+
+        <div id="groupDetails" class="group-details hidden">
+            <!-- Group Loading Overlay -->
+            <div id="groupLoadingOverlay" class="loading-overlay hidden">
+                <div class="loading-content">
+                    <div class="overlay-pacman"></div>
+                    <p class="loading-text">Loading group data...</p>
+                </div>
+            </div>
+
+            <div id="groupContent" class="group-content">
+            <div class="group-header">
+                <button onclick="closeGroupDetails()" class="back-button">← Back to Charity</button>
+                <h2 id="groupTitle" class="group-title"></h2>
+                <p id="groupDescription" class="group-description"></p>
+            </div>
+
+            <div id="groupInfoSection" class="hidden">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-label">Registration Number</div>
+                        <div id="groupRegNumber" class="info-value"></div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label">Date Registered</div>
+                        <div id="groupDateRegistered" class="info-value"></div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label">Registration Status</div>
+                        <div id="groupRegistrationStatus" class="info-value"></div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label">Balance Date</div>
+                        <div id="groupBalanceDate" class="info-value"></div>
+                    </div>
+                </div>
+
+                <div id="groupCharitablePurpose" class="charitable-purpose hidden">
+                    <div class="section-title">Charitable Purpose</div>
+                    <p id="groupPurposeText" class="purpose-text"></p>
+                </div>
+
+                <div class="contact-section">
+                    <div class="section-title">Contact Information</div>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <span class="contact-label">Email:</span>
+                            <span id="groupEmail" class="contact-value"></span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <span class="contact-label">Phone:</span>
+                            <span id="groupPhone" class="contact-value"></span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🌐</span>
+                            <span class="contact-label">Website:</span>
+                            <span id="groupWebsite" class="contact-value"></span>
+                        </div>
+                        <div class="contact-item full-width">
+                            <span class="contact-icon">📍</span>
+                            <span class="contact-label">Postal Address:</span>
+                            <span id="groupPostalAddress" class="contact-value"></span>
+                        </div>
+                        <div class="contact-item full-width">
+                            <span class="contact-icon">📍</span>
+                            <span class="contact-label">Street Address:</span>
+                            <span id="groupStreetAddress" class="contact-value"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="groupFinancialSection" class="financial-section hidden">
+                <h3>Combined Financial Information</h3>
+                <div id="groupYearRange" class="year-label"></div>
+
+                <div class="financial-grid">
+                    <div class="financial-card highlight">
+                        <div class="financial-icon">💰</div>
+                        <div class="financial-label">Total Income</div>
+                        <div id="groupTotalIncome" class="financial-amount"></div>
+                    </div>
+                    <div class="financial-card highlight">
+                        <div class="financial-icon">📊</div>
+                        <div class="financial-label">Total Expenditure</div>
+                        <div id="groupTotalExpenditure" class="financial-amount"></div>
+                    </div>
+                    <div class="financial-card">
+                        <div class="financial-icon">📈</div>
+                        <div class="financial-label">Net Surplus/Deficit</div>
+                        <div id="groupNetSurplus" class="financial-amount"></div>
+                    </div>
+                    <div class="financial-card">
+                        <div class="financial-icon">🏦</div>
+                        <div class="financial-label">Total Assets</div>
+                        <div id="groupTotalAssets" class="financial-amount"></div>
+                    </div>
+                </div>
+
+                <div class="section-title">Expenditure Breakdown</div>
+                <div class="expenditure-breakdown">
+                        <div class="breakdown-item">
+                            <div class="breakdown-label">Salaries & Wages</div>
+                            <div class="breakdown-bar">
+                                <div id="groupSalariesBar" class="breakdown-fill"></div>
+                        </div>
+                        <div id="groupSalariesAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Fundraising Expenses</div>
+                        <div class="breakdown-bar">
+                            <div id="groupFundraisingBar" class="breakdown-fill"></div>
+                        </div>
+                        <div id="groupFundraisingAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Service Provision (Charitable Programs)</div>
+                        <div class="breakdown-bar">
+                            <div id="groupServiceBar" class="breakdown-fill"></div>
+                        </div>
+                        <div id="groupServiceAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Grants Paid (Within NZ)</div>
+                        <div class="breakdown-bar">
+                            <div id="groupGrantsBar" class="breakdown-fill"></div>
+                        </div>
+                        <div id="groupGrantsAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Trading Operations</div>
+                        <div class="breakdown-bar">
+                            <div id="groupTradingBar" class="breakdown-fill"></div>
+                        </div>
+                        <div id="groupTradingAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Volunteer Expenses</div>
+                        <div class="breakdown-bar">
+                            <div id="groupVolunteerBar" class="breakdown-fill"></div>
+                        </div>
+                        <div id="groupVolunteerAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Other Expenditure</div>
+                        <div class="breakdown-bar">
+                            <div id="groupOtherExpBar" class="breakdown-fill"></div>
+                        </div>
+                        <div id="groupOtherExpAmount" class="breakdown-amount"></div>
+                    </div>
+                </div>
+
+                <div class="section-title">Income Sources</div>
+                <div class="income-breakdown">
+                        <div class="breakdown-item">
+                            <div class="breakdown-label">Donations, koha, bequests, and other general fundraising activities</div>
+                            <div class="breakdown-bar income-bar">
+                                <div id="groupDonationsBar" class="breakdown-fill income-fill"></div>
+                        </div>
+                        <div id="groupDonationsAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">General grants</div>
+                        <div class="breakdown-bar income-bar">
+                            <div id="groupGeneralGrantsBar" class="breakdown-fill income-fill"></div>
+                        </div>
+                        <div id="groupGeneralGrantsAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Capital grants and donations</div>
+                        <div class="breakdown-bar income-bar">
+                            <div id="groupCapitalGrantsBar" class="breakdown-fill income-fill"></div>
+                        </div>
+                        <div id="groupCapitalGrantsAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Government service delivery grants/contracts</div>
+                        <div class="breakdown-bar income-bar">
+                            <div id="groupGovGrantsBar" class="breakdown-fill income-fill"></div>
+                        </div>
+                        <div id="groupGovGrantsAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Non-Government service delivery grants/contracts</div>
+                        <div class="breakdown-bar income-bar">
+                            <div id="groupNonGovGrantsBar" class="breakdown-fill income-fill"></div>
+                        </div>
+                        <div id="groupNonGovGrantsAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Membership fees and subscriptions</div>
+                        <div class="breakdown-bar income-bar">
+                            <div id="groupMembershipFeesBar" class="breakdown-fill income-fill"></div>
+                        </div>
+                        <div id="groupMembershipFeesAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Revenue from commercial activities</div>
+                        <div class="breakdown-bar income-bar">
+                            <div id="groupCommercialRevenueBar" class="breakdown-fill income-fill"></div>
+                        </div>
+                        <div id="groupCommercialRevenueAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Interest, dividends and other investment revenue</div>
+                        <div class="breakdown-bar income-bar">
+                            <div id="groupInvestmentIncomeBar" class="breakdown-fill income-fill"></div>
+                        </div>
+                        <div id="groupInvestmentIncomeAmount" class="breakdown-amount"></div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Other revenue</div>
+                        <div class="breakdown-bar income-bar">
+                            <div id="groupOtherIncomeBar" class="breakdown-fill income-fill"></div>
+                        </div>
+                        <div id="groupOtherIncomeAmount" class="breakdown-amount"></div>
+                    </div>
+                </div>
+
+                <div id="groupPeopleSection" class="hidden">
+                    <div class="section-title">People</div>
+
+                    <h4 style="font-weight: 700; margin-top: 24px; margin-bottom: 12px;">Paid work (average week)</h4>
+                    <div class="info-grid" style="margin-bottom: 24px;">
+                        <div class="info-card">
+                            <div class="info-label">People employed full time</div>
+                            <div id="groupFullTimeEmployees" class="info-value"></div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-label">People employed part time</div>
+                            <div id="groupPartTimeEmployees" class="info-value"></div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-label">Average paid hours per week</div>
+                            <div id="groupPaidHours" class="info-value"></div>
+                        </div>
+                    </div>
+
+                    <h4 style="font-weight: 700; margin-top: 24px; margin-bottom: 12px;">Volunteer work (average year)</h4>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <div class="info-label">Total volunteers</div>
+                            <div id="groupTotalVolunteers" class="info-value"></div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-label">Volunteer hours per week</div>
+                            <div id="groupVolunteerHours" class="info-value"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">Officers & Directors</div>
+            <div id="groupOfficersList" class="officers-list"></div>
+
+            <div class="section-title">Member Charities</div>
+            <div id="groupMembersList" class="group-members-grid"></div>
+            </div><!-- end groupContent -->
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <p>Loading...</p>
+            <div class="pac-man"></div>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+
+        <footer>
+            <p>Data sourced from <a href="https://www.charities.govt.nz" target="_blank">Charities Services NZ</a></p>
+            <p>This tool is for informational purposes only. Please verify all information with the official register.</p>
+            <p>Please email <a href="mailto:hello@whatcharity.co.nz">hello@whatcharity.co.nz</a> if you have any questions or issues. We hope you find this product useful.</p>
+        </footer>
+    </div>
+
+    <!-- Fuse.js for fuzzy search -->
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+    <script src="app.js?v=20"></script>
+</body>
+</html>

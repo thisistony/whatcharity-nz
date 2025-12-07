@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Search Test</title>
+</head>
+<body>
+    <h2>Testing normalizeSearchQuery Function</h2>
+    <input type="text" id="test" value="St marys community">
+    <button onclick="runTest()">Test</button>
+    <pre id="output"></pre>
+
+    <script src="app.js?v=19"></script>
+    <script>
+        function runTest() {
+            const query = document.getElementById('test').value;
+            console.log('Testing query:', query);
+
+            if (typeof normalizeSearchQuery === 'function') {
+                const variations = normalizeSearchQuery(query);
+                document.getElementById('output').textContent =
+                    'Variations generated:\n' +
+                    variations.map((v, i) => `${i + 1}. "${v}"`).join('\n');
+            } else {
+                document.getElementById('output').textContent =
+                    'ERROR: normalizeSearchQuery function not found!';
+            }
+        }
+
+        window.onload = runTest;
+    </script>
+</body>
+</html>

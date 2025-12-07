@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Query Variations</title>
+    <style>
+        body { font-family: monospace; padding: 20px; }
+        input { width: 400px; padding: 10px; font-size: 16px; }
+        .variation { padding: 5px; background: #f0f0f0; margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <h2>Test Query Variations Generator</h2>
+    <input type="text" id="query" placeholder="Enter search query..." value="St marys communi">
+    <button onclick="test()">Generate Variations</button>
+    <div id="output"></div>
+
+    <script>
+        function normalizeSearchQuery(query) {
+            const variations = new Set([query]);
+
+            // Handle "St" <-> "Saint" conversion
+            if (query.toLowerCase().includes('st ') || query.toLowerCase().includes('st.')) {
+                variations.add(query.replace(/\bst\.?\s/gi, 'saint '));
+            }
+            if (query.toLowerCase().includes('saint')) {
+                variations.add(query.replace(/\bsaint\s/gi, 'st '));
+            }
+
+            // Handle possessive variations
+            if (query.includes("'s") || query.includes("'s")) {
+                variations.add(query.replace(/['']s\b/gi, ''));
+                variations.add(query.replace(/['']/g, ''));
+            } else {
+                const words = query.split(/\s+/);
+                for (let i = 0; i < words.length; i++) {
+                    const word = words[i];
+                    if (word.length < 3 || word.toLowerCase().endsWith('s')) continue;
+
+                    const withApostrophe = [...words];
+                    withApostrophe[i] = word + "'s";
+                    variations.add(withApostrophe.join(' '));
+
+                    const withS = [...words];
+                    withS[i] = word + 's';
+                    variations.add(withS.join(' '));
+                }
+            }
+
+            // Handle "&" <-> "and" conversion
+            if (query.includes('&')) {
+                variations.add(query.replace(/&/g, 'and'));
+            }
+            if (query.toLowerCase().includes(' and ')) {
+                variations.add(query.replace(/\s+and\s+/gi, ' & '));
+            }
+
+            return Array.from(variations);
+        }
+
+        function test() {
+            const query = document.getElementById('query').value;
+            const variations = normalizeSearchQuery(query);
+
+            let html = '<h3>Generated ' + variations.length + ' variations:</h3>';
+            variations.forEach((v, i) => {
+                html += '<div class="variation">' + (i + 1) + '. "' + v + '"</div>';
+            });
+
+            document.getElementById('output').innerHTML = html;
+        }
+
+        // Auto-run on load
+        window.onload = test;
+    </script>
+</body>
+</html>
